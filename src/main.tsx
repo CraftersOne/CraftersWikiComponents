@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './common.css'
 import { Base64 } from "js-base64";
 import {BookDisplay} from "./components/BookDisplay.tsx";
+import {PlayerQuote} from "./components/PlayerQuote.tsx";
 
 function init() {
 	const books = document.getElementsByClassName('minecraft-book');
@@ -11,7 +12,13 @@ function init() {
 		if (element instanceof HTMLElement)
 			initBook(element);
 	}
-
+	
+	const quotes = document.getElementsByClassName('player-quote');
+	
+	for (const element of quotes) {
+		if (element instanceof HTMLElement)
+			initQuote(element);
+	}
 }
 
 function initBook(element: HTMLElement) {
@@ -24,6 +31,20 @@ function initBook(element: HTMLElement) {
 	createRoot(element).render(
 		<StrictMode>
 			<BookDisplay title={title} author={author} pages={JSON.parse(pages)} scale={scale} />
+		</StrictMode>,
+	);
+}
+
+function initQuote(element: HTMLElement) {
+	const uuid = element.dataset.uuid || "1f61bbf9-a919-4b91-9f36-d082f7bfbf31";
+	const name = element.dataset.name || "Sek";
+	const title = element.dataset.title || "Cool guy.";
+	const quote = element.dataset.name || `"He was number one."`;
+	
+	
+	createRoot(element).render(
+		<StrictMode>
+			<PlayerQuote uuid={uuid} name={name} title={title} quote={quote} />
 		</StrictMode>,
 	);
 }

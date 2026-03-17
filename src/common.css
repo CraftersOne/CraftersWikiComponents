@@ -1,4 +1,9 @@
 @font-face {
+    font-family: Minecraftia;
+    src: url('https://wiki.crafters.one/mediawiki/resources/assets/Minecraftia.ttf');
+}
+
+@font-face {
     font-family: "Minecraft";
     src: url("assets/font/1_Minecraft-Regular.woff") format("woff");
     font-weight: normal;
