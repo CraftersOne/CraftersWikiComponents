@@ -39,7 +39,7 @@ function initQuote(element: HTMLElement) {
 	const uuid = element.dataset.uuid || "1f61bbf9-a919-4b91-9f36-d082f7bfbf31";
 	const name = element.dataset.name || "Sek";
 	const title = element.dataset.title || "Cool guy.";
-	const quote = element.dataset.name || `"He was number one."`;
+	const quote = element.dataset.quote || `"He was number one."`;
 	
 	
 	createRoot(element).render(
