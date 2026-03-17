@@ -1,0 +1,113 @@
+.book-container {
+    --scale: 1;
+    overflow: visible !important;
+    transform-origin: top left;
+    transform: scale(var(--scale));
+    image-rendering: pixelated;
+    width: calc(146px * var(--scale));
+    height: calc(180px * var(--scale));
+}
+
+.book-page {
+    position: relative;
+    color: black;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 146px;
+    height: 180px;
+    background: url('./assets/textures/book/background.png') no-repeat left top;
+    background-size: 100% 100%;
+}
+
+.book-text {
+    font-family: "Minecraft", serif;
+    font-size: 10px;
+}
+
+.book-page-counter {
+    position: absolute;
+    right: 19px;
+    top: 12px;
+    text-align: right;
+}
+
+.book-text-content {
+    position: absolute;
+    left: 15px;
+    top: 29px;
+    width: 114px;
+    line-height: 0.9;
+    max-height: calc(0.9em * 14); /* 14 lines */
+    overflow: hidden;
+    white-space: preserve;
+    word-break: break-word;
+    user-select: text;
+}
+
+.book-button {
+    position: absolute;
+}
+
+.book-button:hover {
+    background-position: 0 -13px;
+}
+
+.book-forward {
+    bottom: 11px;
+    right: 27px;
+    width: 23px;
+    height: 13px;
+    background: url('./assets/textures/book/page_forward.png') no-repeat left top;
+}
+
+.book-backward {
+    bottom: 11px;
+    left: 27px;
+    width: 23px;
+    height: 13px;
+    background: url('./assets/textures/book/page_backward.png') no-repeat left top;
+}
+
+.book-info {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+    background: url('./assets/textures/book/info.png') no-repeat center center;
+    background-size: cover;
+}
+
+.item-tooltip-container {
+    position: absolute;
+    color: black;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.item-tooltip {
+    width: fit-content;
+    height: fit-content;
+    border: 8px solid transparent;
+    border-image-source: url(./assets/textures/tooltip/background.png);
+    border-image-slice: 28 fill;
+    border-image-repeat: stretch;
+    z-index: 20;
+}
+
+.item-tooltip-text {
+    font-family: "Minecraft", serif;
+    font-size: 8px;
+    line-height: 0.9;
+    user-select: none;
+    overflow: hidden;
+    white-space: pre;
+    max-width: 276px;
+    margin: -4px;
+
+}
+
+/* mc text shadow */
+.item-tooltip-text span {
+    text-shadow: 1px 1px rgb(from color-mix(in srgb, currentColor 75%, black 25%) r g b / 25%);
+}
