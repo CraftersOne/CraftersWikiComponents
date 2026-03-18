@@ -115,6 +115,25 @@
 .quote-box {
     display: flex;
     gap: 20px;
+    padding: 10px;
+    align-items: flex-start;
+    border: 2px solid #647C8C;
+    border-radius: 25px;
+    box-shadow: inset 0 0 0 2px rgba(166, 166, 166, 0.5);
+    background: #ececec;
+}
+
+.quote-box.left {
+    flex-direction: row;
+}
+
+/* Flip it */
+.quote-box.right {
+    flex-direction: row-reverse;
+}
+
+.quote-box a {
+    text-decoration: none;
 }
 
 /* Player column */
@@ -123,8 +142,15 @@
     text-align: center;
     flex-shrink: 0;
     margin: auto 0;
+}
+
+.quote-box.right > .player {
+    border-left: 5px solid #647C8C;
+}
+.quote-box.left > .player {
     border-right: 5px solid #647C8C;
 }
+
 .quote-box .player-head {
     width: 50%;
     image-rendering: pixelated;
@@ -152,8 +178,5 @@
     color: #000000;
     font-size: 14px;
     line-height: 1.4;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
     white-space: pre-line;
 }

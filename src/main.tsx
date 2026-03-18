@@ -40,11 +40,11 @@ function initQuote(element: HTMLElement) {
 	const name = element.dataset.name || "Sek";
 	const title = element.dataset.title || "Cool guy.";
 	const quote = element.dataset.quote || `"He was number one."`;
-	
+	const side = (element.dataset.side === "right") ? "right" : "left";
 	
 	createRoot(element).render(
 		<StrictMode>
-			<PlayerQuote uuid={uuid} name={name} title={title} quote={quote} />
+			<PlayerQuote uuid={uuid} name={name} title={title} quote={quote} side={side} />
 		</StrictMode>,
 	);
 }
